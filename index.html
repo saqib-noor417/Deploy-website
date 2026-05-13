@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>EinsProvider | Smart Insurance Solutions – Auto, Home, Life & Business</title>
+  <meta name="description" content="EinsProvider delivers comprehensive insurance plans: auto, home, life, health & business. Get a free quote today and secure your future with trusted coverage.">
+  <meta name="keywords" content="insurance, auto insurance, home insurance, life insurance, health insurance, business insurance, einsprovider, quote, coverage, Bristol West style">
+  <meta name="author" content="EinsProvider">
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f7fc;
+      color: #1a2c3e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* navbar */
+    .navbar {
+      background: rgba(255,255,255,0.98);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+    }
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .logo h2 {
+      font-weight: 800;
+      font-size: 1.9rem;
+      background: linear-gradient(135deg, #0a4c7a, #1d8f8f);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .logo p {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #2c6e6e;
+      letter-spacing: 0.3px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #1f3b4c;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #1d8f8f;
+    }
+    .quote-btn-nav {
+      background: #0a4c7a;
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: 40px;
+      transition: 0.2s;
+    }
+    .quote-btn-nav:hover {
+      background: #1d8f8f;
+      transform: scale(0.97);
+    }
+
+    /* hero section */
+    .hero {
+      background: linear-gradient(120deg, #eef5ff 0%, #e0f0f0 100%);
+      padding: 4rem 0 5rem;
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3rem;
+      justify-content: space-between;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #073b4f;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin: 1.5rem 0;
+      color: #2c4e62;
+    }
+    .cta-button {
+      background: #0a4c7a;
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      font-weight: 700;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 5px 12px rgba(10,76,122,0.2);
+    }
+    .cta-button:hover {
+      background: #1d8f8f;
+      transform: translateY(-2px);
+    }
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+    .hero-image i {
+      font-size: 12rem;
+      color: #1d8f8f;
+      opacity: 0.7;
+    }
+
+    /* services section */
+    .section {
+      padding: 5rem 0;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 3rem;
+      color: #073b4f;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+    .service-card {
+      background: white;
+      border-radius: 28px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all 0.2s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      border: 1px solid #e9f0f0;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: #b9e0e0;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+    }
+    .service-card i {
+      font-size: 3rem;
+      color: #0a4c7a;
+      margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .service-card p {
+      color: #4a6272;
+    }
+
+    /* testimonials */
+    .testimonials {
+      background: #ffffff;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .testimonial-card {
+      background: #fafeff;
+      padding: 1.8rem;
+      border-radius: 24px;
+      border-left: 6px solid #1d8f8f;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .stars {
+      color: #f5b042;
+      margin-bottom: 0.8rem;
+    }
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+    .client-name {
+      font-weight: 800;
+      margin-top: 0.5rem;
+    }
+
+    /* contact form */
+    .contact-section {
+      background: linear-gradient(115deg, #eef2fa 0%, #e3f0ec 100%);
+    }
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+    }
+    .contact-info {
+      flex: 1;
+    }
+    .contact-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .contact-details {
+      margin: 1.5rem 0;
+    }
+    .contact-details p {
+      margin: 0.8rem 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .contact-form {
+      flex: 1;
+      background: white;
+      padding: 2rem;
+      border-radius: 32px;
+      box-shadow: 0 20px 35px rgba(0,0,0,0.05);
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #cddfe5;
+      border-radius: 28px;
+      font-family: inherit;
+      outline: none;
+      transition: 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: #1d8f8f;
+      box-shadow: 0 0 0 2px rgba(29,143,143,0.2);
+    }
+    .submit-btn {
+      background: #0a4c7a;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1rem;
+    }
+    .submit-btn:hover {
+      background: #1d8f8f;
+    }
+
+    /* footer */
+    .footer {
+      background: #0b2b38;
+      color: #d6e9ef;
+      padding: 3rem 0 1.5rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .footer-col h4 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .footer-col p, .footer-col a {
+      color: #bdd4db;
+      text-decoration: none;
+      line-height: 1.8;
+    }
+    .social-icons a {
+      margin-right: 15px;
+      font-size: 1.4rem;
+      color: #c7e2e9;
+    }
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #2c5968;
+      padding-top: 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    /* CTA POPUP (modal) */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0.2s, opacity 0.2s ease;
+    }
+    .popup-overlay.active {
+      visibility: visible;
+      opacity: 1;
+    }
+    .popup-card {
+      background: white;
+      max-width: 460px;
+      width: 90%;
+      border-radius: 48px;
+      padding: 2rem 1.8rem;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 35px 45px rgba(0,0,0,0.2);
+      animation: fadeSlideUp 0.3s ease;
+    }
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .popup-card i {
+      font-size: 3.2rem;
+      color: #1d8f8f;
+      margin-bottom: 0.8rem;
+    }
+    .popup-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+    .popup-card p {
+      color: #4b6a7c;
+      margin-bottom: 1.8rem;
+    }
+    .popup-input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 60px;
+      border: 1px solid #cbdbe2;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    .popup-btn {
+      background: #0a4c7a;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 60px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .close-popup {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #8c9aa5;
+    }
+    .small-text {
+      font-size: 0.7rem;
+      margin-top: 1rem;
+      color: #7f8c8d;
+    }
+
+    /* Floating notification for call */
+    .call-toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0a4c7a;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 60px;
+      font-weight: 600;
+      z-index: 1100;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.25s ease;
+      pointer-events: none;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .call-toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Small hint for users */
+    .click-call-hint {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      z-index: 99;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    @media (max-width: 780px) {
+      .hero-content h1 { font-size: 2.2rem; }
+      .nav-wrapper { flex-direction: column; }
+      .nav-links { justify-content: center; }
+      .section-title { font-size: 1.8rem; }
+      .call-toast { font-size: 0.8rem; white-space: nowrap; padding: 8px 18px; }
+      .click-call-hint { display: none; }
+    }
+    button, .quote-btn-nav, .cta-button, .submit-btn, .popup-btn, .close-popup, a, input, textarea {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+  <div class="container nav-wrapper">
+    <div class="logo">
+      <h2>Saqib noor</h2>
+      <p>trusted protection · smart coverage</p>
+    </div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+      <a href="#" class="quote-btn-nav" id="navQuoteBtn">Get a Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <h1>Insurance that fits your life, <span style="color:#8f1d3a;">securely.</span></h1>
+      <p>Auto, home, life, health & business — EinsProvider delivers comprehensive coverage with 24/7 support. Save up to 25% today.</p>
+      <button class="cta-button" id="heroCtaBtn">Get Your Free Quote →</button>
+    </div>
+    <div class="hero-image">
+      <i class="fas fa-shield-alt"></i>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section (complete services like Bristol West) -->
+<section id="services" class="section">
+  <div class="container">
+    <h2 class="section-title">Complete Insurance Services</h2>
+    <div class="services-grid">
+      <div class="service-card"><i class="fas fa-car"></i><h3>Auto Insurance</h3><p>Liability, collision, comprehensive & roadside assistance. Low-mileage discounts.</p></div>
+      <div class="service-card"><i class="fas fa-home"></i><h3>Home Insurance</h3><p>Protect your property, belongings & liability. Covers natural disasters & theft.</p></div>
+      <div class="service-card"><i class="fas fa-heartbeat"></i><h3>Health Insurance</h3><p>Individual, family & group plans. Access top hospitals & preventive care.</p></div>
+      <div class="service-card"><i class="fas fa-briefcase"></i><h3>Business Insurance</h3><p>General liability, workers' comp & cyber liability. Keep your enterprise safe.</p></div>
+      <div class="service-card"><i class="fas fa-umbrella"></i><h3>Life Insurance</h3><p>Term, whole & universal life. Financial security for your loved ones.</p></div>
+      <div class="service-card"><i class="fas fa-motorcycle"></i><h3>Specialty Vehicles</h3><p>Motorcycle, RV, boat & classic car coverage with flexible deductibles.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="section testimonials">
+  <div class="container">
+    <h2 class="section-title">What Our Clients Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">“EinsProvider made switching auto insurance effortless. Saved $600/year with better coverage. Highly recommend!”</p><p class="client-name">— Sarah M.</p></div>
+      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p class="testimonial-text">“Their home insurance policy gave us total peace of mind after a storm damage claim — fast & fair.”</p><p class="client-name">— David R.</p></div>
+      <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">“Professional, transparent, and responsive. Life insurance process was smooth and digital.”</p><p class="client-name">— Michelle K.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section contact-section">
+  <div class="container contact-wrapper">
+    <div class="contact-info">
+      <h3>Let's talk insurance</h3>
+      <p>Reach out for a personalized quote or any questions — our team replies within hours.</p>
+      <div class="contact-details">
+        <p><i class="fas fa-phone-alt" style="color:#8f1d1d;"></i> <strong id="contactPhoneNumber">1-888-585-0419</strong></p>
+        <p><i class="fas fa-envelope"></i> hello@einsprovider.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> 3700 Insurance Way, Suite 200, Miami, FL</p>
+      </div>
+      <div><i class="fas fa-clock"></i> Mon-Fri: 8am - 8pm | Sat: 9am - 4pm</div>
+    </div>
+    <div class="contact-form">
+      <h3>Request a callback</h3>
+      <form id="contactForm">
+        <div class="form-group"><input type="text" placeholder="Full name" id="contactName" required></div>
+        <div class="form-group"><input type="email" placeholder="Email address" id="contactEmail" required></div>
+        <div class="form-group"><input type="tel" placeholder="Phone number" id="contactPhone"></div>
+        <div class="form-group"><textarea rows="3" placeholder="Tell us about your insurance needs..."></textarea></div>
+        <button type="submit" class="submit-btn">Send Message</button>
+        <p style="font-size:0.7rem; margin-top:12px;">We'll reply within 24h. No spam.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>EinsProvider</h4><p>Complete insurance solutions with integrity. Since 2012, protecting families and businesses across the nation.</p></div>
+      <div class="footer-col"><h4>Quick Links</h4><p><a href="#home">Home</a><br><a href="#services">Services</a><br><a href="#testimonials">Testimonials</a><br><a href="#contact">Contact</a></p></div>
+      <div class="footer-col"><h4>Coverage</h4><p>Auto · Home · Renters · Life · Health · Commercial · Umbrella</p></div>
+      <div class="footer-col"><h4>Connect</h4><div class="social-icons"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div><p>Secure claims: 24/7 hotline</p></div>
+    </div>
+    <div class="copyright">© 2025 EinsProvider.com — All Rights Reserved. | Privacy Policy | Terms of Service | CA License #0L38472</div>
+  </div>
+</footer>
+
+<!-- CTA Popup Modal -->
+<div id="ctaPopup" class="popup-overlay">
+  <div class="popup-card">
+    <span class="close-popup" id="closePopupBtn">&times;</span>
+    <i class="fas fa-file-signature"></i>
+    <h3>Get a Free Quote Today</h3>
+    <p>Unlock exclusive savings on auto, home & life insurance. Compare plans from top carriers.</p>
+    <input type="text" class="popup-input" id="popupNameInput" placeholder="Your name">
+    <input type="email" class="popup-input" id="popupEmailInput" placeholder="Email address">
+    <button class="popup-btn" id="submitPopupBtn">See My Savings →</button>
+    <p class="small-text">No obligation. We respect your privacy.</p>
+  </div>
+</div>
+
+<!-- Floating toast for call feedback -->
+<div id="callToast" class="call-toast">
+  <i class="fas fa-phone-alt"></i> <span id="toastMessage">Calling EinsProvider now...</span>
+</div>
+
+<!-- Small hint (optional) -->
+<div class="click-call-hint">
+  <i class="fas fa-phone"></i> Click anywhere to call
+</div>
+
+<script>
+  // =========================
+  // REAL CALL CONFIG
+  // =========================
+  const PHONE_NUMBER = "18885850419";
+  const DISPLAY_PHONE = "1-888-585-0419";
+
+  document.getElementById("contactPhoneNumber").innerText = DISPLAY_PHONE;
+
+  // =========================
+  // CALL FUNCTION
+  // =========================
+  function makeCall() {
+    const telUrl = "tel:" + PHONE_NUMBER;
+
+    // Use a clickable tel anchor first for better compatibility.
+    const callLink = document.createElement("a");
+    callLink.href = telUrl;
+    callLink.style.display = "none";
+    document.body.appendChild(callLink);
+    callLink.click();
+    document.body.removeChild(callLink);
+
+    // Fallback for browsers/devices that ignore synthetic link clicks.
+    window.location.href = telUrl;
+  }
+
+  // =========================
+  // BUTTON CALL EVENTS
+  // =========================
+  document.getElementById("heroCtaBtn")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    makeCall();
+  });
+
+  document.getElementById("navQuoteBtn")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    makeCall();
+  });
+
+  document.getElementById("contactPhoneNumber")?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    makeCall();
+  });
+
+  // =========================
+  // GLOBAL CLICK ANYWHERE → CALL
+  // =========================
+  document.body.addEventListener("click", function (e) {
+
+    const ignoreTags = ["INPUT", "TEXTAREA", "SELECT", "OPTION"];
+
+    // Let users type/select in form controls without triggering a call.
+    if (ignoreTags.includes(e.target.tagName)) return;
+
+    // Show toast and trigger call immediately from the same user click.
+    const toast = document.getElementById("callToast");
+    if (toast) {
+      toast.classList.add("show");
+    }
+
+    makeCall();
+  });
+
+  // =========================
+  // POPUP
+  // =========================
+  const popupOverlay = document.getElementById('ctaPopup');
+  const closePopupBtn = document.getElementById('closePopupBtn');
+
+  function openPopup() {
+    popupOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePopup() {
+    popupOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  closePopupBtn?.addEventListener('click', closePopup);
+
+  popupOverlay?.addEventListener('click', (e) => {
+    if (e.target === popupOverlay) closePopup();
+  });
+
+  // =========================
+  // POPUP FORM
+  // =========================
+  document.getElementById('submitPopupBtn')?.addEventListener('click', () => {
+    const name = document.getElementById('popupNameInput').value.trim();
+    const email = document.getElementById('popupEmailInput').value.trim();
+
+    if (!name || !email) {
+      alert("Please enter your name and email");
+      return;
+    }
+
+    alert("Thanks! We will contact you shortly.");
+    closePopup();
+  });
+
+  // =========================
+  // CONTACT FORM
+  // =========================
+  document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert("Message sent successfully!");
+    e.target.reset();
+  });
+
+  // =========================
+  // AUTO POPUP
+  // =========================
+  setTimeout(() => {
+    if (!sessionStorage.getItem("popupSeen")) {
+      openPopup();
+      sessionStorage.setItem("popupSeen", "true");
+    }
+  }, 3000);
+
+  // =========================
+  // SMOOTH SCROLL
+  // =========================
+  document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+
+  console.log("EinsProvider Ready - Click Anywhere Call Enabled");
+</script>
+</body>
+</html>
